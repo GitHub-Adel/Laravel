@@ -1,4 +1,4 @@
-Descarga e instalacion en este caso usaremos laragon.
+1) Descarga e instalacion en este caso usaremos laragon.
 ---------------------------------------------
 Laragon es un paquete completo que incluye todo lo necesario para desarrollar con laravel y php y mysql.
 
@@ -12,4 +12,4 @@ Laragon es un paquete completo que incluye todo lo necesario para desarrollar co
 https://laragon.org/download.html
 
 
-luego iniciar todos.
+

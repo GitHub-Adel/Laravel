@@ -9,3 +9,7 @@ se utiliza para instalar dependencias, crear proyecto, ejecutar aplicaciones etc
 G:\laragon\www
 
 3) Escribir composer para ver la lista de comando.
+
+4) se utiliza asi: 
+-----------------------
+composer comandos
