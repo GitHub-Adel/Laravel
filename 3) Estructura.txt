@@ -1,0 +1,14 @@
+1) Rutas
+2) Controladores:
+3) Modelos:
+4) Vistas:
+-------------------------
+1) Hacen una llamada a los controladores, es lo que se escribe en el navegador para llamar 
+     un metodo del controlador.
+
+2) Utiliza los datos del modelo y se los devuelve o presenta al usuario atraves de una vista.
+
+3) Representa los datos de la base de datos.
+
+4) Es lo que se muestra en el navegador, y esta le permite al usuario iteractual con el controlador.
+
