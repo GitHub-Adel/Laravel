@@ -1,0 +1,8 @@
+1) abrir navegador
+2) nombre-proyecto.test
+
+
+nota:
+-----------------------------------
+cada vez que cree un proyecto, debera parar y arrancar los servicios en laragon
+para que pueda ver la pagina
