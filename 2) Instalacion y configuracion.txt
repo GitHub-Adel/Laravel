@@ -1,0 +1,12 @@
+Descarga e instalacion de laragon.
+---------------------------------------------
+Laragon es un paquete completo que incluye todo lo necesario para desarrollar con laravel y php y mysql.
+
+64 bits
+-------------------------
+ https://laragon.org/download/
+
+
+32 bits
+-------------------------
+https://laragon.org/download.html
