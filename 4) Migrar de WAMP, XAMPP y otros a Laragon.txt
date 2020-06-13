@@ -1,0 +1,5 @@
+Podras migrar un proyecto realizado en WAMP, XAMPP y otros a Laragon
+entra a esta pagina y busca Migrate to Laragon:
+
+https://laragon.org/download/
+
