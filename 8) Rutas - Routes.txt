@@ -16,7 +16,7 @@ pasos:
 
 nota:
 -------------------
-a) la url es el nombre del controlador y metodo a ejecutar
+a) la url es el nombre del controlador y metodo a ejecutar seguidos de los parametros
 b) si el parametro no es obligatorio poner {id?} y en el metodo asignar un valor por default $id=0
 c) proyecto1.test  representa el www.pagina.com de nuestro proyecto, ejecuta el controlador por default.
 
