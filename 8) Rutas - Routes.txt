@@ -1,34 +1,24 @@
 Rutas
 -------------------------
-son configuraciones que se utilizan para ejecutar los metodos de un controlador, al escribirla en el navegador.
+son configuraciones que se utilizan para ejecutar los metodos de un controlador, a traves del navegador.
+cada ves que necesites llamar un metodo, se hara por esta via.
 
-donde se configuran estas rutas:
-----------------------------
-1) carpeta del proyecto
-2) carpeta Routes
-3) archivo Web.php
+pasos:
+------------------------
+0) configurar la ruta.
+1) abrir carpeta del proyecto
+2) abrir carpeta Routes
+3) abrir archivo Web.php
+4) Route::get('url','controlador@metodo');
+5) Route::get('/Cliente/Buscar/{id}','ClienteController@Buscar');
+6) ejecutar el metodo por el navegador
+7) proyecto1.test/Cliente/1
 
-
-sintaxis:
----------------------
-Route::get('/carpetaControlador/{parametros}', 'controlador@metodo'  );
-Route::get('/Cliente', 'ClienteController@Inicio'  );
-
-
-escribir en nuestro navegador:
-----------------------------
-www.pagina.com	: esto ejecuta la ruta siguiente, que a su vez ejecuta el metodo Inicio del PrincipalController
-Route::get('/', 'PrincipalController@Inicio'  );
-Cliente | Contacto | Inicio
-
-www.pagina.com/Cliente :para ejecutar el metodo Inicio del controlador cliente
-Route::get('/Cliente', 'ClienteController@Inicio' );
-Crear | Modificar | Eliminar | Guardar | Salir
-
-www.pagina.com/Cliente/1/Adelson  :para ejecutar el metodo Buscar con los parametros id y nombre,  del controlador cliente
-Route::get('/Cliente/{id}/{nombre}', 'ClienteController@Buscar' );
-1	adelson sanchez	012-0110350-2
-
+nota:
+-------------------
+a) la url es el nombre del controlador y metodo a ejecutar
+b) si el parametro no es obligatorio poner {id?} y en el metodo asignar un valor por default $id=0
+c) proyecto1.test  representa el www.pagina.com de nuestro proyecto, ejecuta el controlador por default.
 
 
 

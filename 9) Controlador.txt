@@ -1,0 +1,34 @@
+Rutas
+-------------------------
+son configuraciones que se utilizan para ejecutar los metodos de un controlador, al escribirla en el navegador.
+
+donde se configuran estas rutas:
+----------------------------
+1) carpeta del proyecto
+2) carpeta Routes
+3) archivo Web.php
+
+
+sintaxis:
+---------------------
+Route::get('/carpetaControlador/{parametros}', 'controlador@metodo'  );
+Route::get('/Cliente', 'ClienteController@Inicio'  );
+
+
+escribir en nuestro navegador:
+----------------------------
+www.pagina.com	: esto ejecuta la ruta siguiente, que a su vez ejecuta el metodo Inicio del PrincipalController
+Route::get('/', 'PrincipalController@Inicio'  );
+Cliente | Contacto | Inicio
+
+www.pagina.com/Cliente :para ejecutar el metodo Inicio del controlador cliente
+Route::get('/Cliente', 'ClienteController@Inicio' );
+Crear | Modificar | Eliminar | Guardar | Salir
+
+www.pagina.com/Cliente/1/Adelson  :para ejecutar el metodo Buscar con los parametros id y nombre,  del controlador cliente
+Route::get('/Cliente/{id}/{nombre}', 'ClienteController@Buscar' );
+1	adelson sanchez	012-0110350-2
+
+
+
+
