@@ -9,16 +9,17 @@ pasos:
 1) abrir carpeta del proyecto
 2) abrir carpeta Routes
 3) abrir archivo Web.php
-4) Route::get('url','controlador@metodo');
+4) Route::get('pagina/controlador/metodo/{parametro}','EjemploControlador@metodo');
 5) Route::get('/Cliente/Buscar/{id}','ClienteController@Buscar');
 6) ejecutar el metodo por el navegador
-7) proyecto1.test/Cliente/1
+7) proyecto1.test/Cliente/Buscar/1
 
 nota:
 -------------------
-a) la url es el nombre del controlador y metodo a ejecutar seguidos de los parametros
-b) si el parametro no es obligatorio poner {id?} y en el metodo asignar un valor por default $id=0
-c) proyecto1.test  representa el www.pagina.com de nuestro proyecto, ejecuta el controlador por default.
+a) pagina		:no hay que ponerla en la ruta, el sistema pone proyecto1.test por default.
+b) controlador	:si el controlador se llama ClienteController ponga Cliente.
+c) parametro	:si el metodo no tiene parametro, quitar esta parte.
+c) proyecto1.test	:pagina por default que es el nombre del proyecto seguito de .test
 
 
 
