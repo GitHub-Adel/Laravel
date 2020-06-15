@@ -1,34 +1,39 @@
-Rutas
--------------------------
-son configuraciones que se utilizan para ejecutar los metodos de un controlador, al escribirla en el navegador.
+sirve de intermediario entre la vista y el modelo.
 
-donde se configuran estas rutas:
+flujo:
+-----------------------
+1) el usuario ejecuta la solicitud a traves de una url
+2) le pide los datos al modelo
+3) procesa los datos si se requiere.
+4) le pasa el modelo a la vista.
+5) le devuelve la vista al usuario.
+
+Crear un controlador para Cliente:
 ----------------------------
-1) carpeta del proyecto
-2) carpeta Routes
-3) archivo Web.php
+1) abrir carpeta app
+2) abrir carpeta Http
+3) abrir carpeta Controllers
+4) crear  archivo ClienteController.php
+5) agregar el siguiente contenido
+
+<?php
+
+namespace App\Http\Controllers;
+
+class ClienteController extends Controller
+{
+    public function Crear(){
+        return "Creando cliente";
+    };
+
+    public function Editar($id){
+        return "editando cliente " . $id;
+    };
+}
 
 
-sintaxis:
----------------------
-Route::get('/carpetaControlador/{parametros}', 'controlador@metodo'  );
-Route::get('/Cliente', 'ClienteController@Inicio'  );
-
-
-escribir en nuestro navegador:
-----------------------------
-www.pagina.com	: esto ejecuta la ruta siguiente, que a su vez ejecuta el metodo Inicio del PrincipalController
-Route::get('/', 'PrincipalController@Inicio'  );
-Cliente | Contacto | Inicio
-
-www.pagina.com/Cliente :para ejecutar el metodo Inicio del controlador cliente
-Route::get('/Cliente', 'ClienteController@Inicio' );
-Crear | Modificar | Eliminar | Guardar | Salir
-
-www.pagina.com/Cliente/1/Adelson  :para ejecutar el metodo Buscar con los parametros id y nombre,  del controlador cliente
-Route::get('/Cliente/{id}/{nombre}', 'ClienteController@Buscar' );
-1	adelson sanchez	012-0110350-2
-
-
-
-
+Nota:
+------------------------
+<?php	: inicio de codigo php
+namespace	: especifica la carpeta en la que se encuentra la clase o el controlador.
+extends 	: herencia
