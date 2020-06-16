@@ -1,0 +1,7 @@
+Son las paginas que el usuario ve, las que le permite al usuario comunicarse con el controlador.
+
+Crear View:
+---------------------------
+1) abrir terminal
+2) ubicarse en la carpeta resouces > views
+3) 
