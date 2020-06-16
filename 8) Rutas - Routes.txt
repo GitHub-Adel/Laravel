@@ -1,0 +1,30 @@
+Rutas
+-------------------------
+son configuraciones que se utilizan para ejecutar los metodos de un controlador, a traves del navegador.
+cada ves que necesites llamar un metodo, se hara por esta via.
+
+pasos:
+------------------------
+0) configurar la ruta.
+1) abrir archivo de rutas (proyecto -> routes -> web.php)
+2) Route::get('pagina/controlador/metodo/{parametro}','EjemploControlador@metodo');
+3) Route::get('/Cliente/Buscar/{id}','ClienteController@Buscar');
+4) ejecutar el metodo por el navegador
+5) proyecto1.test/Cliente/Buscar/1
+6) php artisan route:list
+7) muestra todas las rutas que tenemos configuradas.
+
+nota:
+-------------------
+a) pagina		:no hay que ponerla, el sistema pone proyecto1.test por default, pero en el navegador si hay que ponerla.
+b) controlador	:si el controlador se llama ClienteController ponga Cliente.
+c) proyecto1.test	:pagina por default que es el nombre del proyecto seguido de .test
+
+ hay una forma de crear las rutas automaticamente, para todos los metodos de un controlador, que se haya creado
+ con  --resource
+
+route::resource("Controlador","EjemploController");
+route::resource("Cliente","ClienteController");
+
+
+

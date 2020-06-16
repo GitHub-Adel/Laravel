@@ -1,0 +1,15 @@
+Es el administrador de paquetes de Laraver, algo como dotnet  en netcore.
+
+se utiliza para instalar dependencias, crear proyecto, ejecutar aplicaciones etc.
+
+1) Abrir la terminar
+
+2) posicionarte en la ruta del proyecto: 
+----------------------------------------
+G:\laragon\www
+
+3) Escribir composer para ver la lista de comando.
+
+4) se utiliza asi: 
+-----------------------
+composer comandos

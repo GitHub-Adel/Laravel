@@ -1,0 +1,2 @@
+es un motor de plantilla.
+para ivitar cada vez que se pueda, el uso de etiqueta php y html en la vista
