@@ -2,7 +2,7 @@
 2) posicionarse en el directorio de trabajo
 3) con versiones superior a 7.3.0 de php
 -------------------------------------------------------------
-	a) composer global require laravel/install
+	a) composer global require laravel/installer
 	b) laravel new nombre-proyecto
 
 4) con versiones inferiores a 7.3.0 de php 
@@ -11,7 +11,9 @@
 
 5) esto creara una carpeta en el directorio de trabajo con el nombre del proyecto.
 6) debes ubicarte en la carpeta del proyecto para empezar a trabajar. (cd nombre-proyecto)
+7) composer install
 
 nota:
 -----------------------------------
 php -v    muestra la version de php
+composer install  hay que instalar composer dentro del proyecto
