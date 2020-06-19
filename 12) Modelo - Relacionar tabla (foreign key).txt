@@ -1,0 +1,29 @@
+consiste en agregar foreign key a las relaciones.
+se dice que una tabla existe, cuando se crea antes que la tabla actual.
+se dice que una tabla no existe, cuando se crea despues que la tabla actual.
+
+flujo:
+-----------------------
+1) crear campo de tipo unsignedBigInteger
+2) si la tabla relacionada existe, poner el foreign en un campo al final
+3) si la tabla relacionada no existe, poner el foreign en la tabla que no existe.
+4) ejecutar comando fresh y refresh --seed
+5) los seed tienen que estar organizado en base a la foreign key
+
+notas:
+--------------------------------
+1) unsignedBigInteger('tabla_id')->nullable();
+
+2) $table->foreign('tabla_id')->references('id')->on('otraTabla');
+
+3) schema::table('otraTabla',function(Blueprint $tabla){
+	$table->foreign('otraTabla_id')->references('id')->on('estaTabla');
+   });
+
+4) php artisan migrate:fresh
+   php artisan migrate:refresh
+
+5) si al correr el comando anterior da error con un relleno rojo indica que 
+   falta esa dependencia y que hay que correr composer install
+
+

@@ -1,0 +1,177 @@
+es todo lo relacionado a la base de datos, migraciones etc.
+todo lo que se crea en el up() se debe eliminar en el down()
+tablas,foreign, etc.
+
+
+a) configurar nuestra base de datos, usuario,puerto, ip etc.
+---------------------------
+1) ir al proyecto
+2) archivo .env
+3) configurar la base de datos
+4) php artisan key:generate 
+   php artisan config:clear
+   php artisan cache:clear
+
+b) crear, modificar, elimitar cosas.
+-------------------------
+1) ir al proyecto -> database/migrations
+2) hay dos archivos de migraciones ya creados
+--------------------------
+	2014_10_12_000000_create_users_table.php
+	2014_10_12_100000_create_password_resets_table.php
+	users y password_resets, son los nombres de las tablas.
+
+3) crear cosas
+--------------------
+   public function up()
+    {
+	//crea tabla
+        Schema::create('nombre', function (Blueprint $table) {
+	    //crea campos 
+	    $table->tipo('campo')->nullable();
+	    //crear relacion en esta tabla con foreign key
+	    $table->unsignedBigInteger('campoAqui')->nullable();
+  	    $table->foreign('campoAqui')->references('idOtraTabla')->on('otraTabla');
+        });
+
+	//crear relacion en otra tabla
+        schema::table('otratabla',function(Blueprint $table){
+		$table->foreign('idOtraTabla')->references('idEstaTabla')->on('estaTabla');
+
+	});
+    }
+
+
+4) eliminar cosas
+---------------------------
+public function down()
+    {
+	//eliminar foreign key si hay
+        schema::disableForeignKeyConstraints();
+	//elimina una tabla
+        Schema::dropIfExists('tabla');
+    }
+
+
+
+
+
+
+c) empujar cambios a la base de datos
+----------------------------
+1) primero se ejecuta down()
+2) luego se ejecuta up();
+
+//borra y crea la structura en mysql.
+php artisan migrate:fresh
+php artisan migrate:refresh
+
+//borra y crea la estructura e inserta los datos de prueba en mysql
+php artisan migrate:fresh
+php artisan migrate:refresh --seed 
+
+
+
+
+
+
+
+
+notas:
+--------------------------
+id =primary key
+tabla_id=foreign key
+
+users=tabla
+id = primary key
+tabla_id foreing key
+string por unsignedBigIngeter si el foreing key tiene string
+tabla_nombre_table nombre de la tabla.
+las migraciones se ejecutan en orden de arriba abajo.
+ose las tablas se crean de arriba a bajo
+
+
+create= crea la tabla
+table= alter la tabla
+
+si la tabla foranea no existe o se crea despues de esta,
+debes poner la relacion o foreing key en la tabla que no 
+existe en la segunda, ya que asi la primera ya estara 
+creada y no dara error.
+
+
+poniendo el foreing key en la tabla que no existe.
+
+schema::table('golf_clubs',
+function(Blueprint $table){
+$table->foreign('federation_id')->references('id')->on('federations');
+}
+);
+
+siempre poner el foreing key al final
+
+si la tabla relacionda ya esta creada, poner relacion
+
+agregar los cambios a mysql 
+-------------------------------
+php artisan migrate:refresh --seed
+esto solo correrlo en prueba esto ejecuta la migracion
+de manera ordenada, borra todo y lo crea de nuevo.
+
+usar fresh si explota, para que borre todo 
+
+
+seeder
+---------------------
+aqui agregamos los insert con datos de pruegas.
+hacia mysql.
+
+
+1) se crean las tablas 
+2) se llenan los datos de prueba con seeds
+   en la carpeta seeds clase databaseSeeds
+  
+3) si al migrar se presentan error de foreinn key
+ir a la carpeta seeds y buscar initialseeder.php
+y poner las dependencias primero luego la tabla que
+la utiliza de segundo. primero cliente, vendedor
+y luego factura que tiene cliente y vendedor.
+
+
+
+antes de la migracion, crear la base de datos en mysql
+
+si la configuracion de la database
+no se carga en el archivo .env.example
+correr los comandos
+
+
+
+
+en producion si va hacer una migracion por cada cosa
+ejemplo para agregar una columna a una tabla
+para eliminar una columna etc.
+
+metodo down()
+----------------------
+poner los borra la tabla if exist
+schema::dropifExists("tabla")
+en el down se hace las cosas a la inversas de up()
+
+en el up() se crea la tabla luego el foreinkey
+en down() se elimina el foreing key luego la tabla.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
